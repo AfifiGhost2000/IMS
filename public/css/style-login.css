@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: #F2F1F3;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    width: 60%;
+    border-bottom: 1px solid #554D56;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{
+    width: 50px;
+}
+
+header a{
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+header a:hover{
+    color: #554D56;
+}
+
+h1{ 
+    margin: 0 auto;
+    padding: 5px;
+    width: 100px;
+    text-align: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid black;
+}
+
+form{
+    margin: 0 auto;
+    padding: 10px;
+    width: 290px;
+    height: 380px;
+    border-radius: 2px;
+    background-color: rgb(85, 77, 86, .2);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    font-size: large;
+}
+
+form div{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+input{
+    height: 30px;
+    border-radius: 2px;
+    border: none;
+}
+
+button{
+    margin: 0 auto;
+    height: 30px;
+    width: 100px;
+    background-color: #554D56;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: large;
+}
+
+button:hover{
+    background-color: black;
+}

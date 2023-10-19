@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Admin Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+                /* Reset some default margin and padding on the body and header */
+                body, header {
+                    margin: 0;
+                    padding: 0;
+                    background: #F2F1F3;
+
+                }
+
+                header {
+                    width: 1279.002px;
+                    text-align: center; /* Center-align the heading */
+                    padding: 40px 50px 60px 80px; /* Add some padding to the top and bottom of the header */
+                }
+
+                h1 {         
+                    width: 883px;
+                    height: 120px;
+                    flex-shrink: 0;
+                    color: #000;
+                    position: relative;
+                    left: 50%; /* Move it 50% from the left edge of the header */
+                    transform: translateX(-50%); /* Center it horizontally */
+                    bottom: 0; /* Position it at the bottom of the header */
+                    /* margin-bottom: 20px; Add some margin to the bottom */
+                    text-align: center;
+                    font-family: Inter;
+                    font-size: 48px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    
+                }
+                h2 {
+                    width: 1175px;
+                    height: 145px;
+                    flex-shrink: 0;
+                    color: #000;
+                    position: relative;
+                    left: 50%; /* Move it 50% from the left edge of the header */
+                    transform: translateX(-50%); /* Center it horizontally */
+                    bottom: 0; /* Position it at the bottom of the header */
+                    text-align: center;
+                    font-family: Inter;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+                .header-top {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative; /* Position this element relative within the header */
+                    top: 0; /* Place it at the top */
+                    left: 0; /* Place it at the left */
+                    right: 0; /* Place it at the right */
+                    padding: 10px 20px; /* Add some padding to the top bar */
+                }
+
+                .icon {
+                    font-size: 24px; /* Adjust the font size for your icon */
+                    color: #554D56; /* Color of the icon */
+                }
+
+                .login-register {
+                    text-align: right;
+                    font-size: 14px; /* Adjust the font size for your text */
+                }
+
+                .login-register a {
+                    text-decoration: none;
+                    color: #554D56; /* Color of the text links */
+                    margin-left: 10px; /* Add some spacing between the links */
+                }
+
+
+                .horizontal-line {
+                    width: 1279.002px; /* Make the line span the entire width of the header */
+                    height: 2px;
+                
+                    background: #554D56; /* Color of the horizontal line */
+                }
+                /* Style for the image */
+                .logo {
+                    
+                    width: 939px;
+                    height: 254px;
+                    flex-shrink: 0;
+                    filter: blur(2px);
+                    display: block; /* Remove any default inline styling on the image */
+                    margin: 0 auto; /* Center the image horizontally within its container */
+
+                }
+                .container{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+                .left-part{
+                    
+                    margin: 40px 0px 124px 80px;
+                    width: 267px;
+        height: 300px;
+        flex-shrink: 0;
+        background: #707C6E;
+
+                }
+                .left-header{
+                    width: 279px;
+        height: 83px;
+        flex-shrink: 0;
+        color: #000000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+                }
+                .left-para{
+                    color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700px;
+        line-height: normal;
+
+                }
+                .right-part{
+                    margin-left: -280px;
+                padding-bottom:  200px;
+                padding-right: 40px;
+                margin-top: 40px;
+                    width: 900px;
+                height: auto;
+                flex-shrink: 0;
+                background: #D9D9D9;
+                position: relative;
+
+                }
+                .right-part h1{
+                    /* display: inline; */
+                    color: #000;
+        font-family: Inter;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 50px;
+
+
+                }
+
+                
+                #right_icon{
+                    width: 43px;
+        height: 46px;
+        flex-shrink: 0;
+
+
+                }
+                .username{
+
+                    color: #000;
+                    font-family: Inter;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 200px;
+                    line-height: normal;
+                    
+                
+                }
+                .id{
+                    color: #000;
+                    font-family: Inter;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                }
+
+                .my-horizontal-line {
+            border-top: 2px solid #818181; /* Set the line thickness and color */
+            width: 104.5%; /* Set the width to 100% to span the container */
+            margin: 112px 0; /* Adjust margin as needed */
+            
+        }
+        .users-table{
+            padding-left: 50px;
+        
+            
+        }
+        .users-table td {
+        
+            position: relative;
+
+            /* display: grid;
+            grid-template-columns: 1fr 1fr 1fr; */
+            border: 1px solid #fffdfd00; /* Add a border to the table cell */
+            padding-top: 10px; /* Add some padding for spacing */
+        }
+        /* #id{
+            padding-left: 400px;
+            fill: #707C6E;
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0;
+        } */
+        .triangle-button{
+            /* position: absolute;
+            /* fill: #707C6E;
+            width: 22px;
+            height: 22px;
+            flex-shrink: 0; 
+            margin-top: -80px ; */
+        
+            margin-left: 500px; 
+            
+
+
+        }
+
+        .tn1{
+            padding: 7px 15px 10px 7px ;
+        cursor: pointer; 
+        border: none;
+        border-radius: 3px;
+        background-color: #707C6E;
+        margin-bottom: 10px;
+        
+        }
+        .tn2{
+        padding: 7px 15px 10px 7px ;
+        cursor: pointer; 
+        border: none;
+        border-radius: 3px;
+        background-color: #707C6E;
+        margin-left: 10px;
+        
+        }
+        .tn2:hover{
+            background-color: #959595;
+        }
+        .tn1:hover{
+            background-color: #959595;
+        }
+        .center-btn1{
+            padding: 10px 25px 10px 25px ;
+            cursor: pointer; 
+        border: none;
+        border-radius: 15px;
+        background-color: #189d00;
+        
+        margin-left: 100px;
+        
+        margin-top: 30px;
+
+        }
+        .center-btn2{
+            padding: 10px 25px 10px 25px ;
+            cursor: pointer; 
+        border: none;
+        border-radius: 15px;
+        background-color: #ca0000;
+        margin-left: 10px;
+        margin-right: -400px;
+        
+        margin-top: 30px;
+
+        }
+        .center-btn2:hover{
+            background-color: #bb3a3a;
+
+        }
+        .center-btn1:hover{
+            background-color: #43b32f;
+        }
+        .my-horizontal-line2{
+            border-top: 2px solid #818181; /* Set the line thickness and color */
+            width: 104.5%; /* Set the width to 100% to span the container */
+        margin-top: 10px;
+
+        }
+        .my-horizontal-line3{
+            border-top: 2px solid #818181; /* Set the line thickness and color */
+            width: 104.5%; /* Set the width to 100% to span the container */
+         margin-top: 10px; 
+
+        }
+        #sec{
+            padding-top: 0px;
+        }
+
+
+        .my-horizontal-line {
+            border-top: 2px solid #818181; /* Set the line thickness and color */
+            width: 100%; /* Make the line span the entire width of the container */
+            margin: 1px 0; /* Add margin above and below the line to separate users */
+        }
+
+    /* Style the chevron button */
+    .chevron {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid #333;
+      border-bottom: 2px solid #333;
+      transform: rotate(45deg);
+      margin-left: 5px;
+    }
+
+    /* Rotate the chevron button when clicked */
+    .rotated {
+      transform: rotate(180deg);
+    }
+    
+    tbody{
+        padding-top: 800px;
+    }
+    </style>
+    <script src="^5^"></script>
+    <script>
+       document.addEventListener('DOMContentLoaded', function () {
+            // Get all the triangle buttons and add event listeners
+            const triangleButtons = document.querySelectorAll('.triangle-button');
+
+            triangleButtons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Find the associated user-details row
+                    const userDetails = this.parentElement.parentElement.nextElementSibling;
+
+                    // Toggle the user-details row's display
+                    userDetails.style.display = userDetails.style.display === 'none' ? 'block' : 'none';
+
+                    // Rotate the triangle button by toggling a CSS class
+                    this.classList.toggle('rotated');
+                });
+            });
+        });
+
+        function acceptApplication(userId) {
+            fetch(`/accept/${userId}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Handle success (e.g., display a success message)
+                        console.log('Application accepted successfully');
+                    } else {
+                        // Handle error (e.g., display an error message)
+                        console.error('Failed to accept the application');
+                    }
+                });
+        }
+
+        function rejectApplication(userId) {
+            fetch(`/reject/${userId}`, { method: 'POST' })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        // Handle success (e.g., display a success message)
+                        console.log('Application rejected successfully');
+                    } else {
+                        // Handle error (e.g., display an error message)
+                        console.error('Failed to reject the application');
+                    }
+                });
+        }
+
+        function downloadFile(fileName) {
+            const fileUrl = `/uploads/${fileName}`;
+            const link = document.createElement('a');
+            link.href = fileUrl;
+            link.download = fileName; // This sets the download file name
+            link.click();
+        }
+
+
+
+
+
+
+
+
+        
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="icon"><i class="fas fa-user"></i></div>
+            <div class="login-register">
+                <a href="logout">Logout</a> 
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+    </header>
+
+    <div class="container">
+        <div class="left-part">
+        <h1 class="left-header">Welcome Admin</h1>
+        <p class="left-para">No. of Applications: <%= numofApplications %></p>
+    </div>
+
+    <div class="right-part">
+     
+        <h1>Incoming Applications</h1>
+        <div class="my-horizontal-line3"></div>
+    
+        
+        <table class="users-table">
+
+        <tbody>
+
+            <% users.forEach(function(user) { %>
+                <tr>
+                    <td>
+                        <i id="right_icon" class="fas fa-user"></i><span></span>
+                    </td>
+                    <td>     
+                        <h3 class="username"><%= user.fullname %></h3>
+                        <h5 class="id"><%= user.id %></h5>
+                    </td>
+
+                    <td>
+                        <div class="triangle-button" type="button" data-toggle="user-detail">
+                            <svg  class="triangle-icon" xmlns="http://www.w3.org/2000/svg" width="20" height="17" viewBox="0 0 20 17" fill="none">
+                                <path d="M10 17L0.473721 0.5L19.5263 0.5L10 17Z" fill="#707C6E"/>
+                            </svg>  
+                        </div>              
+                    </td>
+                </tr>
+                <tr class="user-detail" style="display: none;">
+                    <td colspan="3">
+                        <h4>Email: <span class="email-text" style="font-style: italic;"><%= user.email %></span></h4>
+                        <h4>University Name: <%= user.university %></h4>
+                        <h4>Major: <%= user.major %></h4>
+                        <h4>Graduation Date: <%= user.graduation_year %></h4>
+                        <h4>Application Date: <%= user.application_date %></h4>
+                        <button class="tn1" type="button" onclick="downloadFile('<%= user.coverLetter %>')">Download Cover letter </button>
+                        <button class="tn2" type="button" onclick="downloadFile('<%= user.resume %>')">Download Resume</button> 
+                        <center>
+                            <span >  
+                                <button  class="center-btn1" type="button"  onclick="acceptApplication('<%= user.id %>')">Accept</button> 
+                                <button  class="center-btn2" type="button"  onclick="rejectApplication('<%= user.id %>')">Reject</button>
+                            </span>
+                        </center>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"><hr class="my-horizontal-line"></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+</div>
+</body>
+</html>

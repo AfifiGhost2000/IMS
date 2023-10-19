@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset some default margin and padding on the body and header */
+        body, header {
+            margin: 0;
+            padding: 0;
+            background: #F2F1F3;
+
+        }
+
+        header {
+            width: 1279.002px;
+            text-align: center; /* Center-align the heading */
+            padding: 40px 50px 60px 80px; /* Add some padding to the top and bottom of the header */
+        }
+
+        h1 {         
+            width: 883px;
+            height: 120px;
+            flex-shrink: 0;
+            color: #000;
+            position: relative;
+            left: 50%; /* Move it 50% from the left edge of the header */
+            transform: translateX(-50%); /* Center it horizontally */
+            bottom: 0; /* Position it at the bottom of the header */
+            margin-bottom: 20px; /* Add some margin to the bottom */
+            text-align: center;
+            font-family: Inter;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            
+        }
+        h2 {
+            width: 1175px;
+            height: 145px;
+            flex-shrink: 0;
+            color: #000;
+            position: relative;
+            left: 50%; /* Move it 50% from the left edge of the header */
+            transform: translateX(-50%); /* Center it horizontally */
+            bottom: 0; /* Position it at the bottom of the header */
+            text-align: center;
+            font-family: Inter;
+            font-size: 24px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Position this element relative within the header */
+            top: 0; /* Place it at the top */
+            left: 0; /* Place it at the left */
+            right: 0; /* Place it at the right */
+            padding: 10px 20px; /* Add some padding to the top bar */
+        }
+
+        .icon {
+            font-size: 24px; /* Adjust the font size for your icon */
+            color: #554D56; /* Color of the icon */
+        }
+
+        .login-register {
+            text-align: right;
+            font-size: 14px; /* Adjust the font size for your text */
+        }
+
+        .login-register a {
+            text-decoration: none;
+            color: #554D56; /* Color of the text links */
+            margin-left: 10px; /* Add some spacing between the links */
+        }
+
+
+        .horizontal-line {
+            width: 1279.002px; /* Make the line span the entire width of the header */
+            height: 2px;
+            background: #554D56; /* Color of the horizontal line */
+        }
+        /* Style for the image */
+        .logo {
+            width: 939px;
+            height: 254px;
+            flex-shrink: 0;
+            filter: blur(2px);
+            display: block; /* Remove any default inline styling on the image */
+            margin: 0 auto; /* Center the image horizontally within its container */
+
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="icon"><i class="fas fa-user"></i></div>
+            <div class="login-register">
+                <a href="login">Login</a> | <a href="register">Register</a>
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+    </header>
+    <h1>Welcome to Our Internship Program!</h1>
+    <img class="logo" src="https://s3-ap-south-1.amazonaws.com/internshala-blog/wp-content/uploads/2018/08/What-is-an-internship-and-how-to-get-one-The-complete-handbook.jpg" alt="Your Logo">
+    <h2>This platform is your gateway to exciting internship opportunities that will shape your future. Dive into the world of hands-on learning, skill-building, and growth with our internship program.</h2>
+</body>
+</html>

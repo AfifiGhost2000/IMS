@@ -1,0 +1,172 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    background-color: #F2F1F3;
+    font-family: 'Inter', sans-serif;
+}
+
+header{
+    margin: 0 auto;
+    margin-bottom: 40px;
+    padding: 10px;
+    width: 60%;
+    border-bottom: 1px solid #554D56;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header img{
+    width: 50px;
+}
+
+header a{
+    padding-left: 10px;
+    text-decoration: none;
+    color: black;
+    font-size: large;
+}
+
+header a:hover{
+    color: #554D56;
+}
+
+
+/*******content*******/
+
+main{
+    margin: 0 auto;
+    width: 60%;
+    height: 75%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.welcome{
+    padding: 10px;
+    width: 30%;
+    height: 50%;
+    background-color: #707C6E;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.applications{
+    padding: 10px;
+    width: 68%;
+    height: 90%;
+    background-color: #D9D9D9;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+}
+
+.apps{
+    padding: 10px;
+    margin: 0 auto;
+    width: 95%;
+    height: 70%;
+    overflow-y: scroll;
+}
+
+
+/*****form****/
+form{
+    margin: 0 auto;
+    margin-top: 20px;
+    width: 80%;
+    height: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+input{
+    width: 50%;
+    height: 23px;
+    border-radius: 2px;
+    border: none;
+}
+
+form div{
+    display: flex;
+    justify-content: space-between;
+}
+
+form button{
+    margin: 0 auto;
+    width: 200px;
+}
+
+#fileUpload{
+
+}
+
+/********scroll bar*********/
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    box-shadow: inset 0px 0 30px #554D56;
+    border-radius: 5px;
+  }
+
+
+.application{
+    padding: 5px;
+    border-bottom: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+}
+
+.application:hover{
+    background-color: #e7e7e7;
+}
+
+.info{
+    display: flex;
+}
+
+.application img{
+    width: 40px;
+    height: 40px;
+    margin-right: 5px;
+}
+
+.status{
+    display: flex;
+    align-items: center;
+}
+
+.circle{
+    margin-right: 5px;
+    width: 15px;
+    height: 15px;
+    background-color: green;
+    border-radius: 10px;
+}
+
+
+
+button{
+    height: 30px;
+    background-color: #554D56;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: black;
+}

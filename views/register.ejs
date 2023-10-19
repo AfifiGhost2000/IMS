@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+        /* Reset some default margin and padding on the body and header */
+        body, header {
+            margin: 0;
+            padding: 0;
+            background: #F2F1F3;
+
+        }
+
+        header {
+            width: 1279.002px;
+            text-align: center; /* Center-align the heading */
+            padding: 20px 50px 60px 80px; /* Add some padding to the top and bottom of the header */
+        }
+
+        h1 {         
+            width: 100%;
+            height: 100%;
+            flex-shrink: 0;
+            color: #000;
+            position: relative;
+            left: 50%; /* Move it 50% from the left edge of the header */
+            transform: translateX(-50%); /* Center it horizontally */
+            margin-top: 10px;
+            margin-bottom: 0px; /* Add some margin to the bottom */
+            text-align: center;
+            font-family: Inter;
+            font-size: 38px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            
+        }
+
+        .header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative; /* Position this element relative within the header */
+            top: 0; /* Place it at the top */
+            left: 0; /* Place it at the left */
+            right: 0; /* Place it at the right */
+            padding: 10px 20px; /* Add some padding to the top bar */
+        }
+
+        .icon {
+            font-size: 24px; /* Adjust the font size for your icon */
+            color: #554D56; /* Color of the icon */
+        }
+
+        .login-register {
+            text-align: right;
+            font-size: 14px; /* Adjust the font size for your text */
+        }
+
+        .login-register a {
+            text-decoration: none;
+            color: #554D56; /* Color of the text links */
+            margin-left: 10px; /* Add some spacing between the links */
+        }
+
+
+        .horizontal-line {
+            width: 1279.002px; /* Make the line span the entire width of the header */
+            height: 2px;
+            background: #554D56; /* Color of the horizontal line */
+        }
+        .horizontal-subline{
+            width: 223.002px;
+            height: 2px;
+            background: #554D56;
+            position: relative;
+            left: 50%; /* Move it 50% from the left edge of the header */
+            transform: translateX(-50%); /* Center it horizontally */
+
+        }
+        .register-container {
+            background: rgba(85, 77, 86, 0.20);
+            border-radius: 2px;
+            position: relative;
+            left: 50%; /* Move it 50% from the left edge of the header */
+            transform: translateX(-50%); /* Center it horizontally */
+            width: 396px;
+            height: 100%;
+            flex-shrink: 0;
+            margin-top: 20px;
+            
+        }
+        .register-form {
+            padding-top: 20px;
+            padding-left: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 40px;
+            margin-left: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: bold;
+            width: 148px;
+            height: 45px;
+            flex-shrink: 0;
+            color: #000;
+            font-family: Inter;
+            font-size: 22px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+
+        }
+
+        p{
+            display: block;
+            font-weight: bold;
+            width: 148px;
+            height: 45px;
+            flex-shrink: 0;
+            color: #000;
+            font-family: Inter;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 302px;
+            height: 39px;
+            flex-shrink: 0;
+            padding: 10px;
+            margin-top: 5px;
+            background: #FFF;
+            border-radius: 2px;
+        }
+        .register-button {
+            background: #554D56;
+            width: 156px;
+            height: 47px;
+            flex-shrink: 0;
+            color: #FFF;
+            text-align: center;
+            font-family: Inter;
+            font-size: 30px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block; /* Make the button a block-level element */
+            margin: 0 auto; /* Center the button horizontally */
+        }
+
+        .register-button:hover {
+            background-color: #0056b3;
+        }
+        .spacer {
+        margin-bottom: 50px; /* Adds space below the element */
+    }
+
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/zxcvbn/4.4.2/zxcvbn.js"></script>
+    <script>
+        // Function to check password strength
+        function checkPasswordStrength() {
+            const password = document.getElementById("password").value;
+            const result = zxcvbn(password);
+            const strengthMeter = document.getElementById("password-strength-meter");
+            const strengthText = document.getElementById("password-strength-text");
+    
+            // Update the password strength meter and text
+            strengthMeter.value = result.score;
+            strengthText.textContent = result.feedback.suggestions.join(" ");
+        }
+    
+        // Function to validate email format
+        function validateEmail() {
+            const email = document.getElementById("email").value;
+            const emailPattern = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/;
+            const emailError = document.getElementById("email-error");
+    
+            if (!emailPattern.test(email)) {
+                emailError.textContent = "Invalid email format";
+            } else {
+                emailError.textContent = "";
+            }
+        }
+    </script>
+    
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="icon"><i class="fas fa-user"></i></div>
+            <div class="login-register">
+                <a href="login">Login</a> | <a href="register">Register</a>
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+    </header>
+
+    <div>
+        <% if(errors != "") { %>
+            <% errors.forEach((item) => { %>
+                <div class="alert alert-danger">
+                    <%- item %>
+                </div>
+            <% }); %>
+        <% } %>
+    </div>
+
+    <h1>Register</h1>
+    <div class="horizontal-subline"></div> 
+
+    <div class="register-container">
+        <form class="register-form" method="post" action="/register">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Your Full Name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="text" id="email" name="email" placeholder="Your Email" required onblur="validateEmail()">
+                <div id="email-error" class="error"></div>
+            </div>
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Your Password" required onkeyup="checkPasswordStrength()">
+            </div>
+            <div class="form-group">
+                <p>Password Strength:</p>
+                <progress id="password-strength-meter" max="5" value="0"></progress>
+                <span id="password-strength-text"></span>
+            </div>
+            <div class="spacer"></div>
+            <button class="register-button" type="submit">Register</button>
+        </form>
+    </div>
+
+
+
+
+
+</body>
+</html>

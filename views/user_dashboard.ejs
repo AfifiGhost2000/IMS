@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>User Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <style>
+                /* Reset some default margin and padding on the body and header */
+                body, header {
+                    margin: 0;
+                    padding: 0;
+                    background: #F2F1F3;
+
+                }
+
+                header {
+                    width: 1279.002px;
+                    text-align: center; /* Center-align the heading */
+                    padding: 40px 50px 60px 80px; /* Add some padding to the top and bottom of the header */
+                }
+
+                h1 {         
+                    width: 883px;
+                    height: 120px;
+                    flex-shrink: 0;
+                    color: #000;
+                    position: relative;
+                    left: 50%; /* Move it 50% from the left edge of the header */
+                    transform: translateX(-50%); /* Center it horizontally */
+                    bottom: 0; /* Position it at the bottom of the header */
+                    /* margin-bottom: 20px; Add some margin to the bottom */
+                    text-align: center;
+                    font-family: Inter;
+                    font-size: 48px;
+                    font-style: normal;
+                    font-weight: 700;
+                    line-height: normal;
+                    
+                }
+                h2 {
+                    width: 1175px;
+                    height: 145px;
+                    flex-shrink: 0;
+                    color: #000;
+                    position: relative;
+                    left: 50%; /* Move it 50% from the left edge of the header */
+                    transform: translateX(-50%); /* Center it horizontally */
+                    bottom: 0; /* Position it at the bottom of the header */
+                    text-align: center;
+                    font-family: Inter;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+                }
+                .header-top {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    position: relative; /* Position this element relative within the header */
+                    top: 0; /* Place it at the top */
+                    left: 0; /* Place it at the left */
+                    right: 0; /* Place it at the right */
+                    padding: 10px 20px; /* Add some padding to the top bar */
+                }
+
+                .icon {
+                    font-size: 24px; /* Adjust the font size for your icon */
+                    color: #554D56; /* Color of the icon */
+                }
+
+                .login-register {
+                    text-align: right;
+                    font-size: 14px; /* Adjust the font size for your text */
+                }
+
+                .login-register a {
+                    text-decoration: none;
+                    color: #554D56; /* Color of the text links */
+                    margin-left: 10px; /* Add some spacing between the links */
+                }
+
+
+                .horizontal-line {
+                    width: 1279.002px; /* Make the line span the entire width of the header */
+                    height: 2px;
+                
+                    background: #554D56; /* Color of the horizontal line */
+                }
+                /* Style for the image */
+                .logo {
+                    
+                    width: 939px;
+                    height: 254px;
+                    flex-shrink: 0;
+                    filter: blur(2px);
+                    display: block; /* Remove any default inline styling on the image */
+                    margin: 0 auto; /* Center the image horizontally within its container */
+
+                }
+                .container{
+                    display: grid;
+                    grid-template-columns: 1fr 1fr;
+                }
+                .left-part{
+                    
+                    margin: 40px 0px 124px 80px;
+                    width: 267px;
+        height: 300px;
+        flex-shrink: 0;
+        background: #707C6E;
+
+                }
+                .left-header{
+                    width: 279px;
+        height: 83px;
+        flex-shrink: 0;
+        color: #000000;
+        text-align: center;
+        font-family: Inter;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 700;
+        line-height: normal;
+
+                }
+                .left-para{
+                    color: #FFF;
+        text-align: center;
+        font-family: Inter;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 700px;
+        line-height: normal;
+
+                }
+                .right-part{
+                    margin-left: -280px;
+                padding-bottom:  200px;
+                padding-right: 40px;
+                margin-top: 40px;
+                    width: 900px;
+                height: auto;
+                flex-shrink: 0;
+                background: #D9D9D9;
+                position: relative;
+
+                }
+                .right-part h1{
+                    /* display: inline; */
+                    color: #000;
+        font-family: Inter;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        margin-top: 50px;
+
+
+                }
+
+                
+                #right_icon{
+                    width: 43px;
+        height: 46px;
+        flex-shrink: 0;
+
+
+                }
+                .username{
+
+                    color: #000;
+                    font-family: Inter;
+                    font-size: 24px;
+                    font-style: normal;
+                    font-weight: 200px;
+                    line-height: normal;
+                    
+                
+                }
+                .date{
+                    color: #000;
+                    font-family: Inter;
+                    font-size: 15px;
+                    font-style: normal;
+                    font-weight: 400;
+                    line-height: normal;
+
+                }
+
+
+        .users-table{
+            padding-left: 50px;
+        
+            
+        }
+        .users-table td {
+        
+            position: relative;
+
+            /* display: grid;
+            grid-template-columns: 1fr 1fr 1fr; */
+            border: 1px solid #fffdfd00; /* Add a border to the table cell */
+            padding-top: 10px; /* Add some padding for spacing */
+        }
+
+        .triangle-button{
+
+            margin-left: 500px; 
+            
+
+
+        }
+
+        .tn1{
+            padding: 7px 15px 10px 7px ;
+        cursor: pointer; 
+        border: none;
+        border-radius: 3px;
+        background-color: #707C6E;
+        margin-bottom: 10px;
+        
+        }
+        .tn2{
+        padding: 7px 15px 10px 7px ;
+        cursor: pointer; 
+        border: none;
+        border-radius: 3px;
+        background-color: #707C6E;
+        margin-left: 10px;
+        
+        }
+        .tn2:hover{
+            background-color: #959595;
+        }
+        .tn1:hover{
+            background-color: #959595;
+        }
+        .center-btn1{
+            padding: 10px 25px 10px 25px ;
+            cursor: pointer; 
+        border: none;
+        border-radius: 15px;
+        background-color: #189d00;
+        
+        margin-left: 100px;
+        
+        margin-top: 30px;
+
+        }
+        .center-btn2{
+            padding: 10px 25px 10px 25px ;
+            cursor: pointer; 
+        border: none;
+        border-radius: 15px;
+        background-color: #ca0000;
+        margin-left: 10px;
+        margin-right: -400px;
+        
+        margin-top: 30px;
+
+        }
+        .center-btn2:hover{
+            background-color: #bb3a3a;
+
+        }
+        .center-btn1:hover{
+            background-color: #43b32f;
+        }
+        .my-horizontal-line2{
+            border-top: 2px solid #818181; /* Set the line thickness and color */
+            width: 104.5%; /* Set the width to 100% to span the container */
+        margin-top: 10px;
+
+        }
+        .my-horizontal-line3{
+            border-top: 2px solid #818181; /* Set the line thickness and color */
+            width: 104.5%; /* Set the width to 100% to span the container */
+         margin-top: 10px; 
+
+        }
+        #sec{
+            padding-top: 0px;
+        }
+
+
+        .my-horizontal-line {
+            border-top: 2px solid #818181; /* Set the line thickness and color */
+            width: 100%; /* Make the line span the entire width of the container */
+            margin: 1px 0; /* Add margin above and below the line to separate users */
+        }
+
+
+    /* Style the chevron button */
+    .chevron {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      border-right: 2px solid #333;
+      border-bottom: 2px solid #333;
+      transform: rotate(45deg);
+      margin-left: 5px;
+    }
+
+    /* Rotate the chevron button when clicked */
+    .rotated {
+      transform: rotate(180deg);
+    }
+    
+    tbody{
+        padding-top: 800px;
+    }
+
+        /* Add styles for status circles */
+    .status-circle {
+        width: 16px;
+        height: 16px;
+        border-radius: 50%;
+        display: inline-block;
+        margin-left: 300px;
+    }
+
+    /* Style for yellow status circle */
+    .status-circle.yellow {
+        background-color: yellow;
+    }
+
+    /* Style for green status circle */
+    .status-circle.green {
+        background-color: green;
+    }
+
+    /* Style for red status circle */
+    .status-circle.red {
+        background-color: red;
+    }
+
+    /* Style for the status caption */
+    .status-caption {
+        font-size: 14px;
+        color: #333; /* Choose your desired text color */
+        vertical-align: middle; /* Align text vertically in the middle of the circle */
+    }
+
+    .center-btn-container {
+    text-align: center;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin-top: 30px;
+}
+
+
+    .center-btn {
+        padding: 10px 25px;
+        cursor: pointer;
+        border: none;
+        border-radius: 15px;
+        background-color: #808080; /* Grey background color */
+        color: white; /* White text color */
+        font-size: 16px;
+    }
+
+    .center-btn:hover {
+        background-color: #C0C0C0; /* Lighter grey on hover */
+    }
+
+
+    </style>
+    <script src="^5^"></script>
+    <script>
+
+
+
+        
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-top">
+            <div class="icon"><i class="fas fa-user"></i></div>
+            <div class="login-register">
+                <a href="logout">Logout</a> 
+            </div>
+        </div>
+        <div class="horizontal-line"></div>
+    </header>
+
+    <div class="container">
+        <div class="left-part"> 
+        <h1 class="left-header">Welcome <%= user.fullname %></h1>
+        <p class="left-para">No. of Applications: <%= rowCount %> </p>
+        <center>
+            <a href="/user_dashboard/new_application">
+                <button class="center-btn">New Application</button>
+            </a> 
+        </center>
+          
+    </div>
+
+    <div class="right-part">
+     
+        <h1>My Applications</h1>
+    
+        
+        <table class="users-table">
+
+            <tbody>
+
+                <% userapplications.forEach(function(user) { %>
+                    <tr>
+                        <td>
+                            <i id="right_icon" class="fas fa-user"></i><span></span>
+                        </td>
+                        <td>     
+                            <h3 class="username"><%= user.fullname %></h3>
+                            <h5 class="date"><%= user.application_date %></h5>
+                        </td>
+
+                        <td>
+                            <% if (user.status === 'PENDING') { %>
+                                <div class="status-circle yellow"></div>
+                            <% } else if (user.status === 'ACCEPTED') { %>
+                                <div class="status-circle green"></div>
+                            <% } else if (user.status === 'REJECTED') { %>
+                                <div class="status-circle red"></div>
+                            <% } %>
+                            <span class="status-caption"><%= user.status %></span>
+                        </td>
+
+                    </tr>
+
+                    <tr>
+                        <td colspan="3"><hr class="my-horizontal-line"></td>
+                    </tr>
+
+
+            
+            
+
+                <% }); %>
+
+            </tbody>
+        </table>
+
+        <div class="center-btn-container">
+            <a href="/user_dashboard/new_application">
+                <button class="center-btn">New Application</button>
+            </a>
+        </div>
+        
+    </div>
+</div>
+</body>
+</html>
